@@ -13,14 +13,12 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    // Show Add Student Form
-    @GetMapping("/addStudent")
+     @GetMapping("/addStudent")
     public String showAddStudentForm() {
         return "add-student";
     }
 
-    // Save Student
-    @PostMapping("/saveStudent")
+     @PostMapping("/saveStudent")
     public String saveStudent(@RequestParam("name") String name,
                               @RequestParam("email") String email,
                               @RequestParam("course") String course) {
@@ -35,8 +33,7 @@ public class StudentController {
         return "redirect:/students";
     }
 
-    // List Students
-    @GetMapping("/students")
+     @GetMapping("/students")
     public String listStudents(Model model) {
 
         model.addAttribute("students",
